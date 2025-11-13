@@ -27,7 +27,7 @@ function Add-AnkiB1Card {
     aws polly synthesize-speech `
         --engine neural `
         --language-code en-GB `
-        --voice-id Arthur `
+        --voice-id Brian `
         --output-format mp3 `
         --text $English `
         $audioFile | Out-Null
