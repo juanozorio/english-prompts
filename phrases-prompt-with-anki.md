@@ -73,17 +73,44 @@ Present Simple; Present & Past Continuous; Past Simple; Future; Present Perfect;
 
 Após a correção, gere **este comando `curl` estável e válido**, escapando todos os campos corretamente:
 
-```bash
-curl -X POST http://localhost:8765 \
-  -H "Content-Type: application/json" \
-  -d "$(aws polly synthesize-speech \
-    --engine neural \
-    --language-code en-GB \
-    --voice-id Arthur \
-    --output-format mp3 \
-    --text '<frase corrigida em inglês>' \
-    output.mp3 >/dev/null && \
-    echo "{\"action\":\"addNote\",\"version\":6,\"params\":{\"note\":{\"deckName\":\"Ingles B1 - Speaking Practice\",\"modelName\":\"Basic\",\"fields\":{\"Front\":\"<frase original em português>\",\"Back\":\"<b>Frase em inglês:</b><br><frase corrigida em inglês><br><br><audio controls src='data:audio/mpeg;base64,$(base64 -w 0 output.mp3)'></audio><br><br><b>Explicação:</b><br><explicacao><br><br><b>Vocabulário útil:</b><br><lista de vocabulario><br><br><b>Dica de speaking:</b><br><dica curta>\"}}}}")"
+```powershell
+$english = 'I decided to start working out regularly because I want to have more energy every day.'
+$portuguese = 'Eu decidi comecar a fazer exercicios regularmente porque quero me sentir com mais energia no dia a dia.'
+$explanation = 'A estrutura decide to + verbo esta correta. Working out e uma forma mais natural e comum de dizer exercising em ingles falado. O uso do Present Simple e do infinitive esta perfeito.'
+$vocab = 'decide to do something = decidir fazer algo; work out = malhar, fazer exercicios; feel energetic = sentir-se com energia'
+$speaking = 'Enfatize o ritmo natural: I decided | to start working out | regularly | because I want to have more energy every day.'
+
+# Gera o audio com Polly
+aws polly synthesize-speech `
+  --engine neural `
+  --language-code en-GB `
+  --voice-id Arthur `
+  --output-format mp3 `
+  --text $english `
+  output.mp3 | Out-Null
+
+# Codifica em base64
+$audioBase64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes("output.mp3"))
+
+# Monta o corpo da requisicao
+$body = @{
+    action = "addNote"
+    version = 6
+    params = @{
+        note = @{
+            deckName = "Ingles B1 - Speaking Practice"
+            modelName = "Basic"
+            fields = @{
+                Front = $portuguese
+                Back = "<b>Frase em ingles:</b><br>$english<br><br><audio controls src='data:audio/mpeg;base64,$audioBase64'></audio><br><br><b>Explicacao:</b><br>$explanation<br><br><b>Vocabulario util:</b><br>$vocab<br><br><b>Dica de speaking:</b><br>$speaking"
+            }
+        }
+    }
+}
+
+# Envia o card ao AnkiConnect
+Invoke-RestMethod -Uri "http://localhost:8765" -Method Post -ContentType "application/json" -Body (ConvertTo-Json $body -Depth 6)
+
 ```
 
 ---
