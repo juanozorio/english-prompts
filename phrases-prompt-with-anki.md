@@ -113,7 +113,7 @@ Yesterday I decided to start practising English more often, but I ended up givin
 Dê leve ênfase em “gave **UP**” e “more **OFTEN**” para soar mais natural.
 
 ✅ Regras finais
-* Todos os textos devem ser escapados corretamente (\", sem emojis, sem tags extras).
+* Todos os textos devem ser escapados corretamente (sem emojis, sem tags extras).
 * O campo Front contém a frase em português.
 * Sem acentuação quando criar o comando para evitar erros de UTF-8
 * O campo Back contém a versão corrigida em inglês + explicação + vocabulário + dica de speaking + áudio Polly.
