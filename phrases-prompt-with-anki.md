@@ -1,86 +1,36 @@
-## 🧠 Prompt de Prática – Inglês B1 (Cambridge First) – versão completa com áudio Polly 🇬🇧
+## 🧠 Prompt de Prática – Inglês B1 (Cambridge First) – com Anki + Áudio Polly 🇬🇧
 
 Estou praticando a construção de frases simples e compostas em inglês.
-Quero treinar todos os tópicos exigidos no nível **B1 (Cambridge English)**, com foco em estrutura, vocabulário, collocations e naturalidade.
+Quero treinar todos os tópicos exigidos no nível **B1 (Cambridge English)**, com foco em **estrutura, vocabulário, collocations, phrasal verbs e naturalidade**.
 
 ---
 
 ### 🎯 Tópicos para praticar
 
-#### 🔤 Grammar & Structure
+**Grammar & Usage**
 
-* Personal Pronouns
-* Indefinite Article
-* Definite Article "The"
-* Some, Any, No, None
-* Countable and Uncountable Nouns
-* Conjunctions and Linkers
-* Enough / Enough vs Too / So vs Such
-* Demonstratives
-* Comparatives and Superlatives
-* Making Questions / Question Tags / Short Answers / Subject & Object Questions / Indirect Questions
-* Zero Conditional / First Conditional / Second Conditional / Conditionals (Usage)
-* There is vs There are
-* Present Simple / Present Continuous / Past Simple / Past Continuous / Past Perfect / Present Perfect / Present Perfect vs Past Simple
-* Irregular Verbs
-
-#### 🧩 Word Formation
-
-* Negative Prefixes
-* Prefixes (UN, DIS, IM, IN, MIS, IR) + Meanings
-* Suffixes (OR, ER, IST)
-* Suffixes (MENT, ITY, NESS, ION, ING)
-* Suffixes (Y, ED, FUL, (I)OUS)
-* Suffixes (ABLE, LESS, IVE, AL)
-
-#### 💬 Vocabulary & Usage
-
-* Collocations (Verb, Noun, Adjective + Preposition)
-* Verb Collocations
-* Verb and Preposition / Noun and Preposition / Adjective and Preposition
-* Prepositional Phrases
-* Prepositions of Place / Prepositions of Time
-* Compound Nouns
-* Phrasal Verbs
-* Either / Too / Neither (Nor) / So
-* Participle Adjectives
-* Positive and Negative Adjectives
-* Forming Adverbs / Types of Adverbs
-* Cardinal and Ordinal Numbers / Saying Numbers
-
-#### 🗣️ Topics & Everyday Contexts
-
-* Feelings and Opinions
-* Common Phrases
-* Talking About Yourself
-* Family / Family Tree
-* People / Men and Women
-* Education / Personal Details
-* Healthy Lifestyle
-* Food / Things to Buy / Shopping / Containers
-* Sport / Hobbies / Entertainment
-* Technology / Computers
-* Tools and DIY / Work + Preposition / In the Office
-* The Environment / Landscape Features / In the Mountains / At the Seaside / Camping / Transport / Road Signs
-* Places to Live / Parts of the House / In the Kitchen / In the Bathroom / Household Chores / In the Town
-* Animals / Animal Body Parts / Animals and their Babies / Types of Insects
-* Colours
-* Word Groups / Bits and Pieces
-* Synonyms (Adjectives / Verbs)
-* Go - Go to - Go on - Go for
+* Conectores e preposições
+* Conectores lógicos
+* Phrasal Verbs comuns do B1
+* Collocations
+* Word Formation
+* Revisão gramatical (present, past, conditionals, comparatives, etc.)
+* Expressar opinião e justificativa
+* Concordar e discordar
+* Registro formal e informal
 
 ---
 
 ### 📋 Instruções
 
-1. Envie uma **frase em português**, relacionada a situações do dia a dia, temas atuais ou tópicos listados acima.
-   (Nada de frases artificiais — mantenha naturalidade e contexto realista.)
+1. Envie **uma frase em português**, natural e realista, sobre situações do dia a dia ou temas comuns do exame B1/B2, algumas vezes envie frases compostas para me forçar a usar conectores
+   (Evite frases artificiais — pense em algo que você realmente diria.)
 
-2. Eu responderei **em inglês**, aplicando os tópicos linguísticos relevantes.
+2. Eu responderei **em inglês**, tentando aplicar os tópicos listados acima.
 
-3. Você fará a **correção completa** da minha resposta, seguindo o modelo abaixo.
+3. Você fará a **correção completa** da minha frase, seguindo o modelo abaixo.
 
-4. Após a correção, **gere automaticamente um comando `curl` estável e funcional**, que cria um **card no Anki** com o conteúdo e o **áudio em inglês (voz Arthur – Amazon Polly)**.
+4. Após a correção, **gere automaticamente um comando `curl` funcional**, que cria um **card no Anki** com o conteúdo **e o áudio em inglês (voz Arthur – Amazon Polly 🇬🇧)**.
 
 ---
 
@@ -90,19 +40,22 @@ Quero treinar todos os tópicos exigidos no nível **B1 (Cambridge English)**, c
 [Mostre a frase corrigida em inglês, com gramática e vocabulário adequados.]
 
 💬 **Explicação:**
-[Explique brevemente o motivo da correção — por exemplo, erro de tempo verbal, preposição incorreta, uso de collocation, etc.]
+[Explique brevemente o motivo da correção — por exemplo, erro de tempo verbal, preposição incorreta, collocation inadequada etc.]
 
 ✨ **Versão aprimorada (mais natural):**
-[Mostre como a frase poderia ser dita de forma mais fluida ou natural por um falante B1/B2, se necessário.]
+[Mostre uma forma mais fluente e natural da frase, se necessário.]
 
 📚 **Vocabulário útil:**
 [Listar 2–3 palavras, expressões ou phrasal verbs usados na frase e seus significados.]
+
+🎙️ **Dica de speaking:**
+[Dica curta sobre pronúncia, ritmo, entonação ou naturalidade.]
 
 ---
 
 ### 💻 Geração automática do card Anki (com áudio Amazon Polly 🇬🇧)
 
-Após cada correção, gere o seguinte comando **estável**, com escaping seguro e áudio embutido:
+Após a correção, gere **este comando `curl` estável e válido**, escapando todos os campos corretamente:
 
 ```bash
 curl -X POST http://localhost:8765 \
@@ -114,16 +67,47 @@ curl -X POST http://localhost:8765 \
     --output-format mp3 \
     --text '<frase corrigida em inglês>' \
     output.mp3 >/dev/null && \
-    echo "{\"action\":\"addNote\",\"version\":6,\"params\":{\"note\":{\"deckName\":\"Ingles B1 - Speaking Practice\",\"modelName\":\"Basic\",\"fields\":{\"Front\":\"<frase original em português>\",\"Back\":\"<b>Frase em ingles:</b><br><frase corrigida em inglês><br><br><audio controls src='data:audio/mpeg;base64,$(base64 -w 0 output.mp3)'></audio><br><br><b>Explicacao:</b><br><explicacao><br><br><b>Vocabulario util:</b><br><lista de vocabulario><br><br><b>Dica de speaking:</b><br><dica curta e prática sobre entonação ou naturalidade na fala>\"}}}}")"
+    echo "{\"action\":\"addNote\",\"version\":6,\"params\":{\"note\":{\"deckName\":\"Ingles B1 - Speaking Practice\",\"modelName\":\"Basic\",\"fields\":{\"Front\":\"<frase original em português>\",\"Back\":\"<b>Frase em inglês:</b><br><frase corrigida em inglês><br><br><audio controls src='data:audio/mpeg;base64,$(base64 -w 0 output.mp3)'></audio><br><br><b>Explicação:</b><br><explicacao><br><br><b>Vocabulário útil:</b><br><lista de vocabulario><br><br><b>Dica de speaking:</b><br><dica curta>\"}}}}")"
 ```
 
 ---
 
-### ✅ Regras finais
+### 💡 Exemplo de funcionamento
 
-* O comando `curl` deve gerar JSON **válido e funcional**.
-* Todos os textos devem ser escapados corretamente (`\"`, sem emojis, sem tags extras).
-* O campo `Front` contém **a frase em português**.
-* O campo `Back` contém **a versão corrigida em inglês + explicação + vocabulário + dica de speaking + áudio Polly**.
-* A voz **Arthur (British English)** é usada em todos os áudios.
-* A dica de speaking deve ser **natural, curta e prática**, focando pronúncia, entonação ou naturalidade.
+**Frase em português:**
+Ontem eu decidi começar a praticar mais inglês, mas acabei desistindo porque estava cansado.
+
+**Minha resposta (em inglês):**
+Yesterday I decided to start practising more English, but I gave up because I was tired.
+
+---
+
+✅ **Correção:**
+A frase está correta e natural. O verbo “give up” foi usado adequadamente no passado.
+
+💬 **Explicação:**
+O past simple está bem aplicado (“decided”, “gave up”). “Practising” usa a grafia britânica.
+
+✨ **Versão aprimorada:**
+Yesterday I decided to start practising English more often, but I ended up giving up because I was exhausted.
+
+📚 **Vocabulário útil:**
+
+* **give up** = desistir
+* **end up** = acabar (fazendo algo)
+* **exhausted** = muito cansado
+
+🎙️ **Dica de speaking:**
+Dê leve ênfase em “gave **UP**” e “more **OFTEN**” para soar mais natural.
+
+✅ Regras finais
+* O comando curl deve gerar JSON válido e funcional.
+* Todos os textos devem ser escapados corretamente (\", sem emojis, sem tags extras).
+* O campo Front contém a frase em português.
+* Sem acentuação quando criar o comando para evitar erros de UTF-8
+* O campo Back contém a versão corrigida em inglês + explicação + vocabulário + dica de speaking + áudio Polly.
+* A voz Arthur (British English) é usada em todos os áudios.
+* A dica de speaking deve ser natural, curta e prática, focando pronúncia, entonação ou naturalidade.
+* No final de tudo, envie uma nova frase em português
+
+Agora vamos começar! Sem introduções e me envie a primeira frase em português
