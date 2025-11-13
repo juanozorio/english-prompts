@@ -9,15 +9,31 @@ Quero treinar todos os tópicos exigidos no nível **B1 (Cambridge English)**, c
 
 **Grammar & Usage**
 
-* Conectores e preposições
-* Conectores lógicos
-* Phrasal Verbs comuns do B1
-* Collocations
-* Word Formation
-* Revisão gramatical (present, past, conditionals, comparatives, etc.)
-* Expressar opinião e justificativa
-* Concordar e discordar
-* Registro formal e informal
+Grammar & Usage (conectores, preposições e revisão geral)
+
+Conectores e preposições: conectores lógicos; preposições de lugar/tempo; prepositional phrases; verb/adj/noun + preposition; conjunctions & linkers.
+Perguntas e respostas: making questions; question tags; short answers; subject/object questions; indirect questions.
+Outros: personal/object pronouns; articles (def/indef); some/any/no/none; countable/uncountable; demonstratives; enough/too/so/such.
+Comparativos, superlativos, conditionals (zero/1º/2º), relative pronouns, compound nouns.
+Word Formation
+
+Prefixos (incl. negativos: un-, dis-, im-, in-, ir-, mis-) + regras de ortografia.
+Sufixos: N (-or, -er, -ist, -ment, -ity, -ness, -ion, -ing); Adj (-y, -ed, -ful, -ous, -able, -less, -ive, -al).
+Phrasal Verbs & Collocations
+
+Phrasal verbs comuns de B1 (ex.: give up, end up, look after, put off, take up).
+Collocations úteis conforme tópicos de vocabulário.
+Vocabulário (temas agrupados)
+
+Casa & moradia: places to live, parts of the house, in the kitchen.
+Vida quotidiana: everyday conversations, work + prepositions, household chores, people, talking about yourself.
+Estudos & trabalho: education, in the office, technology/computers.
+Lazer & cidade: sport, shopping, entertainment, hobbies.
+Natureza & viagem: environment, seaside, camping, landscape, animals, insects.
+Outros: food, transport, containers, family, healthy lifestyle, colours, body parts, synonyms, bits and pieces.
+Tenses & Verb Forms (essenciais)
+
+Present Simple; Present & Past Continuous; Past Simple; Future; Present Perfect; Past Perfect; irregular verbs.
 
 ---
 
