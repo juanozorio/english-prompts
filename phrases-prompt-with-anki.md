@@ -74,43 +74,12 @@ Present Simple; Present & Past Continuous; Past Simple; Future; Present Perfect;
 Após a correção, gere **este comando `curl` estável e válido**, escapando todos os campos corretamente:
 
 ```powershell
-$english = 'I decided to start working out regularly because I want to have more energy every day.'
-$portuguese = 'Eu decidi comecar a fazer exercicios regularmente porque quero me sentir com mais energia no dia a dia.'
-$explanation = 'A estrutura decide to + verbo esta correta. Working out e uma forma mais natural e comum de dizer exercising em ingles falado. O uso do Present Simple e do infinitive esta perfeito.'
-$vocab = 'decide to do something = decidir fazer algo; work out = malhar, fazer exercicios; feel energetic = sentir-se com energia'
-$speaking = 'Enfatize o ritmo natural: I decided | to start working out | regularly | because I want to have more energy every day.'
-
-# Gera o audio com Polly
-aws polly synthesize-speech `
-  --engine neural `
-  --language-code en-GB `
-  --voice-id Arthur `
-  --output-format mp3 `
-  --text $english `
-  output.mp3 | Out-Null
-
-# Codifica em base64
-$audioBase64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes("output.mp3"))
-
-# Monta o corpo da requisicao
-$body = @{
-    action = "addNote"
-    version = 6
-    params = @{
-        note = @{
-            deckName = "Ingles B1 - Speaking Practice"
-            modelName = "Basic"
-            fields = @{
-                Front = $portuguese
-                Back = "<b>Frase em ingles:</b><br>$english<br><br><audio controls src='data:audio/mpeg;base64,$audioBase64'></audio><br><br><b>Explicacao:</b><br>$explanation<br><br><b>Vocabulario util:</b><br>$vocab<br><br><b>Dica de speaking:</b><br>$speaking"
-            }
-        }
-    }
-}
-
-# Envia o card ao AnkiConnect
-Invoke-RestMethod -Uri "http://localhost:8765" -Method Post -ContentType "application/json" -Body (ConvertTo-Json $body -Depth 6)
-
+Add-AnkiB1Card `
+    -English "I decided to start working out regularly because I want to have more energy every day." `
+    -Portuguese "Eu decidi comecar a fazer exercicios regularmente porque quero me sentir com mais energia no dia a dia." `
+    -Explanation "A estrutura decide to + verbo esta correta. Working out e uma forma mais natural e comum de dizer exercising em ingles falado. O uso do Present Simple e do infinitive esta perfeito." `
+    -Vocab "decide to do something = decidir fazer algo; work out = malhar, fazer exercicios; feel energetic = sentir-se com energia" `
+    -Speaking "Enfatize o ritmo natural: I decided | to start working out | regularly | because I want to have more energy every day."
 ```
 
 ---
@@ -144,12 +113,10 @@ Yesterday I decided to start practising English more often, but I ended up givin
 Dê leve ênfase em “gave **UP**” e “more **OFTEN**” para soar mais natural.
 
 ✅ Regras finais
-* O comando curl deve gerar JSON válido e funcional.
 * Todos os textos devem ser escapados corretamente (\", sem emojis, sem tags extras).
 * O campo Front contém a frase em português.
 * Sem acentuação quando criar o comando para evitar erros de UTF-8
 * O campo Back contém a versão corrigida em inglês + explicação + vocabulário + dica de speaking + áudio Polly.
-* A voz Arthur (British English) é usada em todos os áudios.
 * A dica de speaking deve ser natural, curta e prática, focando pronúncia, entonação ou naturalidade.
 * No final de tudo, envie uma nova frase em português
 
