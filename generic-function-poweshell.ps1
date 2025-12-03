@@ -35,7 +35,7 @@ function Add-AnkiB1Card {
     # Codifica audio em Base64
     $audioBase64 = [Convert]::ToBase64String([IO.File]::ReadAllBytes($audioFile))
 
-    # Monta o corpo da requisicao
+    # Monta o corpo da request
     $body = @{
         action = "addNote"
         version = 6
