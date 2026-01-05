@@ -23,7 +23,7 @@ function Add-AnkiB1Card {
     # Arquivo temporario de audio
     $audioFile = "output.mp3"
 
-    # Gera o audio com Polly (voz Arthur)
+    # Gera o audio com Polly (voz Brian)
     aws polly synthesize-speech `
         --engine neural `
         --language-code en-GB `
