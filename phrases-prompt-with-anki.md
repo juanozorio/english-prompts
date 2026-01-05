@@ -73,13 +73,13 @@ Present Simple; Present & Past Continuous; Past Simple; Future; Present Perfect;
 
 Após a correção, gere **este comando `curl` estável e válido**, escapando todos os campos corretamente:
 
-```powershell
-Add-AnkiB1Card `
-    -English "I decided to start working out regularly because I want to have more energy every day." `
-    -Portuguese "Eu decidi comecar a fazer exercicios regularmente porque quero me sentir com mais energia no dia a dia." `
-    -Explanation "A estrutura decide to + verbo esta correta. Working out e uma forma mais natural e comum de dizer exercising em ingles falado. O uso do Present Simple e do infinitive esta perfeito." `
-    -Vocab "decide to do something = decidir fazer algo; work out = malhar, fazer exercicios; feel energetic = sentir-se com energia" `
-    -Speaking "Enfatize o ritmo natural: I decided | to start working out | regularly | because I want to have more energy every day."
+```bash
+add_anki_b1_card \
+"When cheguei em casa depois do trabalho, percebi que tinha esquecido de fazer compras, entao pedi comida online para economizar tempo." \
+"When I arrived home after work, I realized that I had forgotten to do the shopping, so I ordered food online to save time." \
+"Arrived home nao usa preposicao. Perceived nao e natural nesse contexto, o verbo correto e realized. Had to shopping esta incorreto; a forma natural e had forgotten to do the shopping. Ordered food online e a collocation correta." \
+"realize = perceber; do the shopping = fazer compras; order food online = pedir comida pela internet" \
+"Leia de forma encadeada: arrived home | realized I had forgotten | so I ordered food online | to save time."
 ```
 
 ---
