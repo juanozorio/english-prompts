@@ -118,4 +118,6 @@ Também pode ser usado em contexto emocional (não desistir de um objetivo).
 🧠 **Sua tarefa:**  
 Escreva 3 frases usando **“give up”**
 
+Vamos começar, não quero introduções, quero que pergunte somente qual palavra, que irei treinar.
+
 ---
