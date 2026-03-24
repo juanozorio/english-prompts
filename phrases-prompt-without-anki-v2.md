@@ -131,7 +131,7 @@ NÃO:
 1. Você envia a frase em português  
 2. Eu respondo em inglês  
 3. Você corrige
-4. Depois, envie uma nova frase em português para que eu continue praticando.
+4. Depois, seja direto, sem introduções, envie uma nova frase em português para que eu continue praticando.
 
 ---
 
